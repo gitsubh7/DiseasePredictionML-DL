@@ -1,0 +1,86 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+    <div class="alert alert-danger">{{ message }}</div>
+{% endif %}
+<style>
+body {
+    height: 100%;
+    background-color: #2A2A2A;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color:aliceblue;
+}
+.contain{
+    height:12rem;
+    width:12rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: large;
+    color:#2A2A2A;
+    border-radius: 20%;
+    background-color: #DFBDFE;
+    font-size: 1.5rem;
+    
+}
+.contain:hover{
+    background-color: #ce99ff;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  margin:2rem;
+  margin-bottom:4rem;
+
+}
+</style>
+<div >
+    <div  style="display: flex; flex-direction: column;" >
+        <h1>Disease Predictor</h1>
+        <div style="width:80%;  display: flex; flex-wrap: wrap; justify-content: center; gap:5rem;align-self: center;">
+            <a href="{{ url_for('cancerPage') }}">
+                <div class="contain" id="breast_cancer" >
+                    Breast Cancer
+                </div>
+            </a>
+            <a href="{{ url_for('diabetesPage') }}">
+                <div class="contain">
+                    Diabetes
+                </div>
+            </a>
+            
+            <a href="{{ url_for('heartPage') }}">
+                <div class="contain">
+                    Heart
+                </div>
+            </a>
+           <a href="{{ url_for('kidneyPage') }}">
+            <div class="contain">
+                Kidney
+            </div>
+           </a>
+            <a href="{{ url_for('liverPage') }}">
+                <div class="contain">
+                    Liver
+                </div>
+            </a>
+            <a href="{{ url_for('malariaPage') }}">
+                <div class="contain">
+                    Malaria
+                </div>
+            </a>
+            <a href="{{ url_for('pneumoniaPage') }}">
+                <div class="contain">
+                    Pneumonia
+                </div>
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
